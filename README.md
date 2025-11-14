@@ -55,7 +55,7 @@ To calibrate it:
 
 sensitivitycorrected = sensitivitycurrent × (Vreported / Vactual)
 
-Example:
+#### Example:
 
 * You set sensitivity: 8.0
 * ESPHome shows 270 V
