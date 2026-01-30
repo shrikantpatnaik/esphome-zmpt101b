@@ -1,13 +1,13 @@
 import esphome.codegen as cg
 import esphome.config_validation as cv
-from esphome.components import sensor
+from esphome.components import sensor, voltage_sampler
 from esphome.const import CONF_ID, CONF_NAME, CONF_UNIT_OF_MEASUREMENT
 
 from esphome.components import sensor
-adc_ns = cg.esphome_ns.namespace("adc")
-ADCSensor = adc_ns.class_("ADCSensor", sensor.Sensor)
 
-CODEOWNERS = ["@toniotruel"]
+AUTO_LOAD = ["voltage_sampler"]
+
+CODEOWNERS = ["@toniotruel", "@shrikantpatnaik"]
 
 CONF_ADC_ID = "adc_id"
 CONF_SENSITIVITY = "sensitivity"
@@ -23,7 +23,7 @@ CONFIG_SCHEMA = sensor.sensor_schema(
     state_class="measurement",
 ).extend({
     cv.GenerateID(): cv.declare_id(ZMPT101BSensor),
-    cv.Required(CONF_ADC_ID): cv.use_id(ADCSensor),
+    cv.Required(CONF_ADC_ID): cv.use_id(voltage_sampler.VoltageSampler),
     cv.Required(CONF_SENSITIVITY): cv.float_,
     cv.Optional(CONF_FREQUENCY, default=50): cv.positive_int,
     cv.Optional(CONF_LOOP_COUNT, default=50): cv.positive_int,

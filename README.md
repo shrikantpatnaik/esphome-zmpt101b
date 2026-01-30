@@ -1,5 +1,5 @@
 # ESPHome ZMPT101B Sensor
-
+Just a fork of [hugokernel/esphome-zmpt101b](https://github.com/hugokernel/esphome-zmpt101b) to use allow other ADCs like the ADS1115.
 ## Introduction
 
 This is an ESPHome external component for measuring AC RMS voltage using the ZMPT101B voltage sensor module.
