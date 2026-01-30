@@ -1,7 +1,7 @@
 #pragma once
 
 #include "esphome/core/component.h"
-#include "esphome/components/adc/adc_sensor.h"
+#include "esphome/components/voltage_sampler/voltage_sampler.h"
 
 namespace esphome {
 namespace zmpt101b {
